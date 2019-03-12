@@ -1,0 +1,25 @@
+```{r}
+
+library(ggplot2)
+Enrolled <-read.csv("StudentEnrolled.csv",encoding="UTF-8")
+
+print(Enrolled)
+
+ggplot(Enrolled,aes(x=Enrolled$Year1,y =Enrolled$year2))+geom_point(shape=1)+geom_smooth(method = lm)
+
+ggplot(Enrolled,aes(x=Enrolled$year2,y=Enrolled$year3))+geom_point(shape=1)+geom_smooth(method = lm)
+
+lm(Enrolled$year2 ~ Enrolled$Year1 + Enrolled$year3)
+'
+data(Entolled)
+head(Enrolled)
+fit2 <- lm(Enrolled$year2 ~ Enrolled$Year1,data=Enrolled)
+summary(fit2)
+
+plot(Enrolled$year2 ~ Enrolled$Year1,data=Enrolled)
+
+abline(fit2)
+'
+
+```
+
